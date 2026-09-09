@@ -1,2 +1,2 @@
-# FT-TPI
-Frontend del TPI de Ezequiel Suarez hecho com Thiago Aguero 2026 7mo año de CTPOBA
+# TPI Frontend
+Frontend del TPI del colegio CTPOBA por Ezequiel Suarez con Thiago Aguero
