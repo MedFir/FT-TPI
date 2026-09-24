@@ -1,38 +1,86 @@
-import { sumar } from "./funciones.js"
-import {esMayorDeEdad} from "./funciones.js"
-import {saludar} from "./funciones.js"
+import { describe, test, expect } from "vitest";
+import { esPar, formatearPrecio, iniciales, contarPalabras } from "./funciones.js";
 
-import { describe, it, test, expect } from "vitest";
+describe("esPar", () => {
+  test("devuelve true cuando el numero es par", () => {
+    const numero = 4;
+    const resultado = esPar(numero);
 
-test("el total es 8", () => {
-  const a = 5;
-  const b = 3;
-  const res = sumar(a, b);
+    expect(resultado).toBe(true);
+  });
 
-  expect(res).toBe(8);
+  test("devuelve false cuando el numero es impar", () => {
+    expect(esPar(7)).toBe(false);
+  });
+
+  test("considera al cero como par", () => {
+    expect(esPar(0)).toBe(true);
+  });
+
+  test("funciona con numeros negativos", () => {
+    expect(esPar(-4)).toBe(true);
+    expect(esPar(-3)).toBe(false);
+  });
 });
-test("el numero es 0", () => {
-  const a = 0;
-  const res = sumar(a, a);
-  expect(res).toBe(0);
+
+describe("formatearPrecio", () => {
+  test("formatea un monto entero con separador de miles", () => {
+    expect(formatearPrecio(1500)).toBe("$ 1.500");
+  });
+
+  test("formatea un monto con decimales", () => {
+    expect(formatearPrecio(1500.5)).toBe("$ 1.500,50");
+  });
+
+  test("formatea el cero", () => {
+    expect(formatearPrecio(0)).toBe("$ 0");
+  });
+
+  test("formatea un monto negativo", () => {
+    expect(formatearPrecio(-200)).toBe("-$ 200");
+  });
+
+  test("usa dos separadores de miles en montos de siete cifras", () => {
+    expect(formatearPrecio(1234567)).toBe("$ 1.234.567");
+  });
 });
 
+describe("iniciales", () => {
+  test("devuelve las iniciales de un nombre y dos apellidos", () => {
+    expect(iniciales("ana maria lopez")).toBe("A.M.L.");
+  });
 
-test("edades 20 y true", () => {
-  const edad = 20;
-  const res = esMayorDeEdad(edad);
+  test("funciona con un nombre de una sola palabra", () => {
+    expect(iniciales("ana")).toBe("A.");
+  });
 
-  expect(res).toBe(true);
+  test("ignora los espacios de mas", () => {
+    expect(iniciales("  ana   maria  lopez  ")).toBe("A.M.L.");
+  });
+
+  test("devuelve una cadena vacia si el nombre esta vacio", () => {
+    expect(iniciales("")).toBe("");
+  });
 });
-test("edades 17 y false", () => {
-  const edad = 17;
-  const res = esMayorDeEdad(edad);
 
-  expect(res).toBe(false);
-});
-test("texto correcto= Hola, Ana!", () => {
-  const nom = "Ana";
-  const res = saludar(nom);
+describe("contarPalabras", () => {
+  test("cuenta las palabras de una frase", () => {
+    expect(contarPalabras("Una frase normal")).toBe(3);
+  });
 
-  expect(res).toBe("Hola, Ana!");
+  test("devuelve 0 con un texto vacio", () => {
+    expect(contarPalabras("")).toBe(0);
+  });
+
+  test("devuelve 0 con un texto de solo espacios", () => {
+    expect(contarPalabras("   ")).toBe(0);
+  });
+
+  test("no cuenta de mas si hay varios espacios seguidos", () => {
+    expect(contarPalabras("Una   frase   normal")).toBe(3);
+  });
+
+  test("cuenta bien si hay saltos de linea", () => {
+    expect(contarPalabras("Una\nfrase\nnormal")).toBe(3);
+  });
 });
