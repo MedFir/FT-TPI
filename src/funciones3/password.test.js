@@ -117,7 +117,7 @@ describe("validarPassword - acumulación de errores", () => {
   });
 
   test("devuelve 4 errores si viola todas las reglas", () => {
-    let password = validarPassword("abc");
+    let password = validarPassword("a bc");
 
     expect(password.valida).toBe(false);
     expect(password.errores).toHaveLength(4);
@@ -129,10 +129,35 @@ describe("validarPassword - acumulación de errores", () => {
 });
 
 describe("validarPassword - entradas inesperadas", () => {
-  test.todo("rechaza una cadena vacía sin lanzar excepción");
-  test.todo("rechaza null sin lanzar excepción");
-  test.todo("rechaza undefined sin lanzar excepción");
-  test.todo("rechaza un número sin lanzar excepción");
+  test("rechaza una cadena vacía sin lanzar excepción", () => {
+    let password = validarPassword("");
+
+    expect(password.valida).toBe(false);
+    expect(password.errores).toContain(MENSAJES.LONGITUD);
+    expect(password.errores).toContain(MENSAJES.MAYUSCULA);
+    expect(password.errores).toContain(MENSAJES.NUMERO);
+  });
+
+  test("rechaza null sin lanzar excepción", () => {
+    let password = validarPassword(null);
+
+    expect(password.valida).toBe(false);
+    expect(password.errores).toContain(MENSAJES.TIPO);
+  });
+
+  test("rechaza undefined sin lanzar excepción", () => {
+    let password = validarPassword(undefined);
+
+    expect(password.valida).toBe(false);
+    expect(password.errores).toContain(MENSAJES.TIPO);
+  });
+
+  test("rechaza un número sin lanzar excepción", () => {
+    let password = validarPassword(12345678);
+
+    expect(password.valida).toBe(false);
+    expect(password.errores).toContain(MENSAJES.TIPO);
+  });
 });
 
 describe("validarPassword - caracteres del español", () => {
