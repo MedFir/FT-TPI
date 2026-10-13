@@ -77,10 +77,33 @@ describe("validarPassword - valores límite de longitud", () => {
 });
 
 describe("validarPassword - reglas de contenido", () => {
-  test.todo("rechaza una contraseña sin números");
-  test.todo("rechaza una contraseña con un espacio al principio");
-  test.todo("rechaza una contraseña con un espacio en el medio");
-  test.todo("rechaza una contraseña con un espacio al final");
+  test("rechaza una contraseña sin números", () => {
+    let password = validarPassword("Abcdefgh");
+
+    expect(password.valida).toBe(false);
+    expect(password.errores).toContain(MENSAJES.NUMERO);
+  });
+
+  test("rechaza una contraseña con un espacio al principio", () => {
+    let password = validarPassword(" Abc1234x");
+
+    expect(password.valida).toBe(false);
+    expect(password.errores).toContain(MENSAJES.ESPACIOS);
+  });
+
+  test("rechaza una contraseña con un espacio en el medio", () => {
+    let password = validarPassword("Abc 1234x");
+
+    expect(password.valida).toBe(false);
+    expect(password.errores).toContain(MENSAJES.ESPACIOS);
+  });
+
+  test("rechaza una contraseña con un espacio al final", () => {
+    let password = validarPassword("Abc1234x ");
+
+    expect(password.valida).toBe(false);
+    expect(password.errores).toContain(MENSAJES.ESPACIOS);
+  });
 });
 
 describe("validarPassword - acumulación de errores", () => {
