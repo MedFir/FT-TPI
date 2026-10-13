@@ -107,8 +107,25 @@ describe("validarPassword - reglas de contenido", () => {
 });
 
 describe("validarPassword - acumulación de errores", () => {
-  test.todo("devuelve 2 errores si faltan mayúscula y número");
-  test.todo("devuelve 4 errores si viola todas las reglas");
+  test("devuelve 2 errores si faltan mayúscula y número", () => {
+    let password = validarPassword("abcdefgh");
+
+    expect(password.valida).toBe(false);
+    expect(password.errores).toHaveLength(2);
+    expect(password.errores).toContain(MENSAJES.MAYUSCULA);
+    expect(password.errores).toContain(MENSAJES.NUMERO);
+  });
+
+  test("devuelve 4 errores si viola todas las reglas", () => {
+    let password = validarPassword("abc");
+
+    expect(password.valida).toBe(false);
+    expect(password.errores).toHaveLength(4);
+    expect(password.errores).toContain(MENSAJES.LONGITUD);
+    expect(password.errores).toContain(MENSAJES.MAYUSCULA);
+    expect(password.errores).toContain(MENSAJES.NUMERO);
+    expect(password.errores).toContain(MENSAJES.ESPACIOS);
+  });
 });
 
 describe("validarPassword - entradas inesperadas", () => {
