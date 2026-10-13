@@ -161,8 +161,19 @@ describe("validarPassword - entradas inesperadas", () => {
 });
 
 describe("validarPassword - caracteres del español", () => {
-  test.todo("acepta una contraseña con ñ");
-  test.todo("acepta una contraseña con acentos");
+  test("acepta una contraseña con ñ", () => {
+    let password = validarPassword("Contraseña1");
+
+    expect(password.valida).toBe(true);
+    expect(password.errores).toEqual([]);
+  });
+
+  test("acepta una contraseña con acentos", () => {
+    let password = validarPassword("Árbol123");
+
+    expect(password.valida).toBe(true);
+    expect(password.errores).toEqual([]);
+  });
 });
 
 /*
