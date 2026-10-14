@@ -203,6 +203,75 @@ describe("podio", () => {
   });
 
   // Seguí vos.
+
+  test("devuelve los nombres de los 3 jugadores cuando solo hay 3 jugadores", () => {
+    // Arrange
+    const jugadores = [
+      { nombre: "Ana", puntos: 300 },
+      { nombre: "Beto", puntos: 900 },
+      { nombre: "Caro", puntos: 500 },
+    ];
+
+    // Act
+    const resultado = podio(jugadores);
+
+    // Assert
+    expect(resultado).toEqual(["Beto", "Caro", "Ana"]);
+  });
+
+  test("devuelve los nombres de los 2 jugadores cuando solo hay 2 jugadores", () => {
+    // Arrange
+    const jugadores = [
+      { nombre: "Ana", puntos: 300 },
+      { nombre: "Beto", puntos: 900 },
+    ];
+
+    // Act
+    const resultado = podio(jugadores);
+
+    // Assert
+    expect(resultado).toEqual(["Beto", "Ana"]);
+  });
+
+  test("devuelve un array vacio cuando no hay jugadores", () => {
+    // Arrange
+    const jugadores = [
+    ];
+
+    // Act
+    const resultado = podio(jugadores);
+
+    // Assert
+    expect(resultado).toEqual([]);
+  });
+
+  test("devuelve beto como primer elemento de la lista cuando es el que más puntos tiene y esta ultimo en la lista", () => {
+    // Arrange
+    const jugadores = [
+      { nombre: "Ana", puntos: 300 },
+      { nombre: "Caro", puntos: 500 },
+      { nombre: "Beto", puntos: 900 }
+    ];
+
+    // Act
+    const resultado = podio(jugadores);
+
+    // Assert
+    expect(resultado).toEqual(["Beto", "Caro", "Ana"]);
+  });
+
+  test("devuelve 1 jugador cuando solo hay 1 jugador", () => {
+    // Arrange
+    const jugadores = [
+      { nombre: "Ana", puntos: 300 }
+    ];
+
+    // Act
+    const resultado = podio(jugadores);
+
+    // Assert
+    expect(resultado).toEqual(["Ana"]);
+  });
 });
 
 // ─────────────────────────────────────────────────────────────────────
