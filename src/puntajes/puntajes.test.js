@@ -303,6 +303,10 @@ describe("formatearTiempo", () => {
   test("devuelve '1:05' cuando pasaron 65 segundos", () => {
     expect(formatearTiempo(65)).toBe("1:05");
   });
+
+  test("devuelve '10:00' cuando pasaron 600 segundos", ()=>{
+    expect(formatearTiempo(600)).toBe("10:00");
+  })
   // Seguí vos.
 });
 
