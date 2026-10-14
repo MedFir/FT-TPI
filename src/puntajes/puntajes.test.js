@@ -288,6 +288,21 @@ describe("formatearTiempo", () => {
     expect(formatearTiempo(75)).toBe("1:15");
   });
 
+  test("devuelve '0:00' cuando pasaron 0 segundos", () => {
+    expect(formatearTiempo(0)).toBe("0:00");
+  });
+
+  test("devuelve '0:30' cuando pasaron 30 segundos", () => {
+    expect(formatearTiempo(30)).toBe("0:30");
+  });
+
+  test("devuelve '1:00' cuando pasaron 60 segundos", () => {
+    expect(formatearTiempo(60)).toBe("1:00");
+  });
+
+  test("devuelve '1:05' cuando pasaron 65 segundos", () => {
+    expect(formatearTiempo(65)).toBe("1:05");
+  });
   // Seguí vos.
 });
 
@@ -322,6 +337,72 @@ describe("validarNombre", () => {
   });
 
   // Seguí vos.
+
+  test("Rechaza un string de 2 caracteres", () => {
+    // Arrange
+    const nombre = "Th";
+
+    // Act
+    const resultado = validarNombre(nombre);
+
+    // Assert
+    expect(resultado).toEqual({ valido: false, errores: [ERRORES.LONGITUD] });
+  });
+
+  test("Acepta un nombre de 3 caracteres", () => {
+    // Arrange
+    const nombre = "Bea";
+
+    // Act
+    const resultado = validarNombre(nombre);
+
+    // Assert
+    expect(resultado).toEqual({ valido: true, errores: [] });
+  });
+
+  test("Acepta un string de 12 caracteres", () => {
+    // Arrange
+    const nombre = "Kevingustaci";
+
+    // Act
+    const resultado = validarNombre(nombre);
+
+    // Assert
+    expect(resultado).toEqual({ valido: true, errores: [] });
+  });
+
+  test("Rechaza un string de 13 caracteres pero que cumpla con las otras 2 reglas", () => {
+    // Arrange
+    const nombre = "Kevingustacio";
+
+    // Act
+    const resultado = validarNombre(nombre);
+
+    // Assert
+    expect(resultado).toEqual({ valido: false, errores: [ERRORES.LONGITUD] });
+  });
+
+  test("Rechaza un string que contenga espacios pero cumpla las otras 2 reglas", () => {
+    // Arrange
+    const nombre = "Eli osito";
+
+    // Act
+    const resultado = validarNombre(nombre);
+
+    // Assert
+    expect(resultado).toEqual({ valido: false, errores: [ERRORES.ESPACIOS] });
+  });
+
+  test("Rechaza un string que empieze por un numero pero cumpla las otras 2 reglas", () => {
+    // Arrange
+    const nombre = "3liodoro";
+
+    // Act
+    const resultado = validarNombre(nombre);
+
+    // Assert
+    expect(resultado).toEqual({ valido: false, errores: [ERRORES.INICIAL] });
+  });
 });
 
 /* ═══════════════════════════════════════════════════════════════════
@@ -343,27 +424,28 @@ describe("validarNombre", () => {
    ───────────────────────────────────────────────────────────────────
    PREGUNTAS - respondé acá mismo, dentro de este comentario
 
-   1. Ejercicio 3: ¿con qué valor de `segundos` encontraste el error?  ______
-      ¿Qué devolvía la función?  ______   ¿Qué tenía que devolver?  ______
+   1. Ejercicio 3: ¿con qué valor de `segundos` encontraste el error?  Lo vi a simple vista revisando el archivo .js
+      ¿Qué devolvía la función?  Devolvia 200 si le pasaba 60 ¿Qué tenía que devolver?  Y tenia que devolver 500
 
    2. ¿Qué cambiaste en `puntajes.js` para arreglarlo?
-      _______________________________________________________
+       Cambie el '<' por '<=' en la condicion que evaluaba si darle 500 puntos o no
 
    3. Antes de encontrarlo, ¿cuántos tests de `bonusPorTiempo` tenías en
-      verde?  ______
+      verde? Solo el que me diste de ejemplo
       Estaban en verde y el error estaba igual. ¿Por qué no lo detectaban?
-      _______________________________________________________
+      Porque no evaluaban el limite de la condicion que evaluaba si dar 500pts o no.
 
-   4. Desafío final: ¿en qué función estaba el segundo error?  ____________
-      ¿Con qué entrada lo encontraste?  ____________
+   4. Desafío final: ¿en qué función estaba el segundo error? validarNombre
+      ¿Con qué entrada lo encontraste?  Revisando el archivo
       ¿Qué tiene en común esa entrada con la de la pregunta 1?
-      _______________________________________________________
+      A las 2 les faltaba tener en cuenta que se incluian los valores limite.
 
-   5. Verificación: ¿cuántos tests se pusieron en rojo?  ______
+   5. Verificación: ¿cuántos tests se pusieron en rojo?  
       ¿Cuál o cuáles?
-      _______________________________________________________
+      xd
 
    6. Ejercicio 4: si dos jugadores tienen los mismos puntos, ¿cuál de los
       dos va primero en el podio? ¿Lo dice el comentario de la función?
-      _______________________________________________________
+      El comentario de la funcion no dice quien deberia estar primero. Pero en caso de 
+      que tengan los mismos puntos, queda primero el que haya sido mencionado antes en el arr.
    ═══════════════════════════════════════════════════════════════════ */
