@@ -1,0 +1,14 @@
+.header-direccion{
+    width: 100px;
+    border: 1px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-direccion .circulo{
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    border-radius: 50%;
+}
