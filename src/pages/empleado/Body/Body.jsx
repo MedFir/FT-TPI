@@ -2,8 +2,8 @@ import './Body.css'
 import AdministrarPedidos from '../Vistas/AdministrarPedidos/AdministrarPedidos.jsx'
 import AdministrarProductos from '../Vistas/AdministrarProductos/AdministrarProductos.jsx'
 import HistorialPedidos from '../Vistas/HistorialPedidos/HistorialPedidos.jsx'
+import Home from '../Vistas/Home/Home.jsx'
 
-import Home from '../Home/Home.jsx'
 import Navbar from '../Navbar/Navbar.jsx'
 
 export default function Body() {
