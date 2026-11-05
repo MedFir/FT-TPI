@@ -11,19 +11,24 @@ import Buscador from '../Buscador/Buscador.jsx'
 import Header from '../Header/Header.jsx'
 import Navbar from '../Navbar/Navbar.jsx'
 
+import {Router, Switch, Route, Link} from "wouter";
+
 export default function Body() {
     return (
+        <>
         <main className="body-cliente">
-            <Header />
-            <Buscador />
-            <Busqueda />
-            <Carrito />
-            <HistorialPedidos />
-            <Home />
-            <Negocio />
-            <Perfil />
-            <Producto />
-            <Navbar />
+            <Router>
+                <Switch>
+                    <Route path ="/inicio" component = {Home} />
+                    <Route path ="/exploracion" component = {Busqueda} />
+                    <Route path ="/carrito" component = {Carrito} />
+                    <Route path ="/pedidos" component = {HistorialPedidos} />
+                    <Route path ="/perfil" component = {Perfil} />
+                </Switch>
+            </Router>
         </main>
+        <Navbar />
+        </>
+
     )
 }
