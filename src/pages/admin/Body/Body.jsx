@@ -3,8 +3,7 @@ import AdministrarClientes from '../Vistas/AdministrarClientes/AdministrarClient
 import AdministrarEmpleados from '../Vistas/AdministrarEmpleados/AdministrarEmpleados.jsx'
 import AdministrarVendedores from '../Vistas/AdministrarVendedores/AdministrarVendedores.jsx'
 import Categorias from '../Vistas/Categorias/Categorias.jsx'
-
-import Navbar from '../Navbar/Navbar.jsx'
+import Navbar from '../../../components/Navbar/Navbar.jsx'
 
 export default function Body() {
     return (

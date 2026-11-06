@@ -3,8 +3,7 @@ import AdministrarPedidos from '../Vistas/AdministrarPedidos/AdministrarPedidos.
 import AdministrarProductos from '../Vistas/AdministrarProductos/AdministrarProductos.jsx'
 import HistorialPedidos from '../Vistas/HistorialPedidos/HistorialPedidos.jsx'
 import Home from '../Vistas/Home/Home.jsx'
-
-import Navbar from '../Navbar/Navbar.jsx'
+import Navbar from '../../../components/Navbar/Navbar.jsx'
 
 export default function Body() {
     return (

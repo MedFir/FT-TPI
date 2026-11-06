@@ -2,8 +2,7 @@ import './Body.css'
 import AdministrarEmpleados from '../Vistas/AdministrarEmpleados/AdministrarEmpleados.jsx'
 import AdministrarNegocios from '../Vistas/AdministrarNegocios/AdministrarNegocios.jsx'
 import AdministrarSuscripciones from '../Vistas/AdministrarSuscripciones/AdministrarSuscripciones.jsx'
-
-import Navbar from '../Navbar/Navbar.jsx'
+import Navbar from '../../../components/Navbar/Navbar.jsx'
 
 export default function Body() {
     return (

@@ -1,3 +1,57 @@
-h1 {
-    font-size: 1.5rem;
+.navbarClienteBody{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 130px;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    border: solid 2px #EAE2DC;
+}
+.navbarClienteBody .navbar-vista,.navbarClienteBody .navbar-carrito{
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 15px;
+}
+.navbarClienteBody .navbar-vista:hover,
+.navbarClienteBody .navbar-carrito:hover
+{
+    background-color: #a9a9a9;
+    cursor: pointer;
+}
+.navbarClienteBody .navbar-vista{
+    width: 80px;
+    height: 90%;
+}
+.navbarClienteBody .navbar-carrito{
+    width: 80px;
+    height: 90%;
+    justify-content: start;
+    padding-top: 8px;
+}
+.navbarClienteBody .navbar-vista img{
+    width: 20px;
+    height: 20px;
+}
+.navbarClienteBody .navbar-carrito img{
+    width: 70px;
+    height: 70px;
+    border: 2px solid #77706C;
+    border-radius: 50%;
+    padding: 8px;
+}
+.navbarClienteBody .navbar-vista p {
+    margin-top: 15px;
+}
+.navbarClienteBody .navbar-carrito p {
+    margin-top: 4px;
+    font-size: 14px;
 }
