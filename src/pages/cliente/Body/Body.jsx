@@ -1,11 +1,12 @@
 import './Body.css'
+import Home from '../Vistas/Home/Home.jsx'
 import Busqueda from '../Vistas/Busqueda/Busqueda.jsx'
 import Carrito from '../Vistas/Carrito/Carrito.jsx'
 import HistorialPedidos from '../Vistas/HistorialPedidos/HistorialPedidos.jsx'
-import Home from '../Vistas/Home/Home.jsx'
-import Negocio from '../Vistas/Negocio/Negocio.jsx'
 import Perfil from '../Vistas/Perfil/Perfil.jsx'
+
 import Producto from '../Vistas/Producto/Producto.jsx'
+import Negocio from '../Vistas/Negocio/Negocio.jsx'
 
 import Buscador from '../Buscador/Buscador.jsx'
 import Header from '../Header/Header.jsx'
@@ -24,6 +25,9 @@ export default function Body() {
                     <Route path ="/carrito" component = {Carrito} />
                     <Route path ="/pedidos" component = {HistorialPedidos} />
                     <Route path ="/perfil" component = {Perfil} />
+
+                    <Route path ="/producto" component = {Producto} />
+                    <Route path ="/negocio" component = {Negocio} />
                 </Switch>
             </Router>
         </main>
