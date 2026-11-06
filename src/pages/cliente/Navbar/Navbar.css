@@ -20,13 +20,29 @@
     align-items: center;
     flex-direction: column;
     font-size: 15px;
-}
-.navbarClienteBody .navbar-vista:hover,
-.navbarClienteBody .navbar-carrito:hover
-{
-    background-color: #a9a9a9;
     cursor: pointer;
 }
+.navbarClienteBody .navbar-vista:active,
+.navbarClienteBody .navbar-carrito:active {
+  opacity: 0.7;
+  transition: transform 0.1s, opacity 0.1s;
+}
+.navbarClienteBody .navbar-vista.seleccionado p,
+.navbarClienteBody .navbar-carrito.seleccionado p {
+    color: #F52B3A;
+    font-weight: bold;
+}
+
+.navbarClienteBody .navbar-vista.seleccionado img,
+.navbarClienteBody .navbar-carrito.seleccionado img {
+    filter: brightness(0) invert(1);
+}
+
+.navbar-carrito.seleccionado .navbar-imagenCarrito,
+.navbar-vista.seleccionado .navbar-imagen{
+    background-color: #F52B3A;
+}
+
 .navbarClienteBody .navbar-vista{
     width: 80px;
     height: 90%;
@@ -54,4 +70,19 @@
 .navbarClienteBody .navbar-carrito p {
     margin-top: 4px;
     font-size: 14px;
+}
+.navbar-carrito .navbar-imagenCarrito, .navbar-vista .navbar-imagen{
+    background-color: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.navbar-vista .navbar-imagen{
+    width: 50px;
+    height: 50px;
+}
+.navbar-carrito .navbar-imagenCarrito{
+    width: 68px;
+    height: 68px;
 }
