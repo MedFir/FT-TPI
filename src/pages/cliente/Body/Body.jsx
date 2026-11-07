@@ -12,13 +12,15 @@ import Buscador from '../Buscador/Buscador.jsx'
 import Header from '../Header/Header.jsx'
 import Navbar from '../Navbar/Navbar.jsx'
 
-import {Router, Switch, Route, Link} from "wouter";
+import {Router, Switch, Route} from "wouter";
 
 export default function Body() {
     return (
         <>
-        <main className="body-cliente">
-            <Router>
+        <Router>
+            <main className="body-cliente">
+                <Header />
+                <Buscador />
                 <Switch>
                     <Route path ="/inicio" component = {Home} />
                     <Route path ="/exploracion" component = {Busqueda} />
@@ -29,9 +31,9 @@ export default function Body() {
                     <Route path ="/producto" component = {Producto} />
                     <Route path ="/negocio" component = {Negocio} />
                 </Switch>
-            </Router>
-        </main>
-        <Navbar />
+            </main>
+            <Navbar />
+        </Router>
         </>
 
     )

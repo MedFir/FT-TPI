@@ -1,3 +1,69 @@
-h1 {
-    font-size: 1.5rem;
+.cliente-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 90px;
+    padding: 24px 28px;
+}
+
+.cliente-header-marca {
+    color: inherit;
+    text-decoration: none;
+}
+
+.cliente-header-marca {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+.cliente-header-nombre {
+    color: #f52b3a;
+    font-size: 52px;
+    font-weight: 800;
+    letter-spacing: -2px;
+    line-height: 0.9;
+}
+
+.cliente-header-eslogan {
+    color: #f52b3a;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    line-height: 1.1;
+    padding-left: 2px;
+}
+
+.cliente-header-marca:focus-visible {
+    outline: 2px solid #f52b3a;
+    outline-offset: 5px;
+}
+
+@media (max-width: 520px) {
+    .cliente-header {
+        gap: 20px;
+        padding: 20px 16px;
+    }
+
+    .cliente-header-nombre {
+        font-size: 40px;
+    }
+
+    .cliente-header-eslogan {
+        font-size: 13px;
+    }
+
+}
+
+@media (max-width: 360px) {
+    .cliente-header {
+        gap: 12px;
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+
+    .cliente-header-nombre {
+        font-size: 34px;
+    }
+
 }
