@@ -1,6 +1,5 @@
-.cliente-filtro-seleccion-boton:focus-visible,
-.cliente-filtro-opcion:focus-visible {
-    outline: 2px solid #f52b3a;
+.cliente-filtro-select:focus-visible {
+    outline: 2px solid #434343;
     outline-offset: 2px;
 }
 
@@ -23,7 +22,7 @@
     font-size: 24px;
 }
 
-.cliente-filtro-seleccion-boton,
+.cliente-filtro-select,
 .cliente-filtro-rango input {
     min-width: 0;
     height: 46px;
@@ -36,72 +35,11 @@
     font-size: 20px;
 }
 
-.cliente-filtro-seleccion {
-    position: relative;
+.cliente-filtro-select {
     flex: 1;
     min-width: 0;
-}
-
-.cliente-filtro-seleccion-boton {
-    display: flex;
     width: 100%;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
     cursor: pointer;
-    text-align: left;
-}
-
-.cliente-filtro-seleccion-boton > span:first-child {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-
-.cliente-filtro-flecha {
-    width: 12px;
-    height: 12px;
-    flex-shrink: 0;
-    transform: rotate(45deg) translateY(-3px);
-    border-right: 2px solid #777;
-    border-bottom: 2px solid #777;
-}
-
-.cliente-filtro-flecha.abierto {
-    transform: rotate(225deg) translate(-2px, -1px);
-}
-
-.cliente-filtro-opciones {
-    position: absolute;
-    z-index: 2;
-    top: calc(100% + 6px);
-    right: 0;
-    left: 0;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    padding: 5px;
-    border-radius: 16px;
-    background: #fff;
-    box-shadow: 0 4px 14px rgb(0 0 0 / 18%);
-}
-
-.cliente-filtro-opcion {
-    min-height: 40px;
-    padding: 8px 14px;
-    border: 0;
-    border-radius: 12px;
-    background: #fff;
-    color: #5f5f5f;
-    cursor: pointer;
-    font: inherit;
-    font-size: 18px;
-    text-align: left;
-}
-
-.cliente-filtro-opcion:hover,
-.cliente-filtro-opcion[aria-selected="true"] {
-    background: #ededed;
 }
 
 .cliente-filtro-rango {
@@ -136,24 +74,11 @@
         font-size: 18px;
     }
 
-    .cliente-filtro-seleccion {
+    .cliente-filtro-select {
         width: 100%;
         flex: auto;
-    }
-
-    .cliente-filtro-seleccion-boton {
         height: 48px;
         font-size: 18px;
-    }
-
-    .cliente-filtro-opciones {
-        max-height: 220px;
-        overflow-y: auto;
-    }
-
-    .cliente-filtro-opcion {
-        min-height: 44px;
-        font-size: 17px;
     }
 
     .cliente-filtro-rango {

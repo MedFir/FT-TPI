@@ -1,6 +1,7 @@
 import './Body.css'
+import { useState } from 'react'
 import Home from '../Vistas/Home/Home.jsx'
-import Busqueda from '../Vistas/Busqueda/Busqueda.jsx'
+import Exploracion from '../Vistas/Exploracion/Exploracion.jsx'
 import Carrito from '../Vistas/Carrito/Carrito.jsx'
 import HistorialPedidos from '../Vistas/HistorialPedidos/HistorialPedidos.jsx'
 import Perfil from '../Vistas/Perfil/Perfil.jsx'
@@ -15,15 +16,23 @@ import Navbar from '../Navbar/Navbar.jsx'
 import {Router, Switch, Route} from "wouter";
 
 export default function Body() {
+    /* Esto es para decirle al componente Exploracion, que se a tocado el boton para mostrar filtros */
+    const [filtrosAbiertos, setFiltrosAbiertos] = useState(false)
+
     return (
         <>
         <Router>
             <main className="body-cliente">
                 <Header />
-                <Buscador />
+                <Buscador
+                    filtrosAbiertos={filtrosAbiertos}
+                    onToggleFiltros={() => setFiltrosAbiertos((abiertos) => !abiertos)}
+                />
                 <Switch>
                     <Route path ="/inicio" component = {Home} />
-                    <Route path ="/exploracion" component = {Busqueda} />
+                    <Route path="/exploracion">
+                        {() => <Exploracion filtrosAbiertos={filtrosAbiertos} />}
+                    </Route>
                     <Route path ="/carrito" component = {Carrito} />
                     <Route path ="/pedidos" component = {HistorialPedidos} />
                     <Route path ="/perfil" component = {Perfil} />
