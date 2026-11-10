@@ -1,0 +1,13 @@
+.cliente-exploracion {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    padding: 16px 12px 100px;
+}
+
+.cliente-exploracion-sin-resultados {
+    padding: 24px;
+    color: #5f5f5f;
+    font-size: 18px;
+    text-align: center;
+}
