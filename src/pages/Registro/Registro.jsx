@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
-import './Register.css'
+import './Registro.css'
 
-export default function Register () {
+export default function Registro () {
   const [photoUrl, setPhotoUrl] = useState('')
 
   useEffect(() => {
@@ -109,7 +109,7 @@ export default function Register () {
         </div>
 
         <p className="register-login">
-          ¿Tienes cuenta? <a href="/login">Inicia sesión</a>
+          ¿Tienes cuenta? <a href="/iniciar-sesion">Inicia sesión</a>
         </p>
       </section>
     </main>

@@ -1,6 +1,6 @@
-import './Login.css'
+import './IniciarSesion.css'
 
-export default function Login () {
+export default function IniciarSesion () {
   return (
     <main className="login-page">
       <img className="login-logo" src="/Login/logo-kekeya.png" alt="KeKe YA!" />
@@ -36,7 +36,7 @@ export default function Login () {
         </div>
 
         <p className="login-register">
-          ¿No tienes cuenta? <a href="/register">Regístrate</a>
+          ¿No tienes cuenta? <a href="/registro">Regístrate</a>
         </p>
       </section>
     </main>

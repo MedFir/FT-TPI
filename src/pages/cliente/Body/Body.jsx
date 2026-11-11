@@ -12,7 +12,7 @@ import Negocio from '../Vistas/Negocio/Negocio.jsx'
 import Buscador from '../Buscador/Buscador.jsx'
 import Header from '../Header/Header.jsx'
 import Navbar from '../Navbar/Navbar.jsx'
-import NotFound from '../../NotFound/NotFound.jsx'
+import NotFound from '../../../components/NotFound/NotFound.jsx'
 
 import { Switch, Route, Redirect } from 'wouter'
 
