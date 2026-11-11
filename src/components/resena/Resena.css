@@ -14,19 +14,19 @@
     font-size: 15px;
 }
 
-.BodyResena{
+.Resena .BodyResena{
     display: flex;
     gap: 10px;
 }
 
-.BodyResena > img{
+.Resena .BodyResena > img{
     width: 50px;
     height: 50px;
 
     border-radius: 50%;
 }
 
-.InformacionResena{
+.Resena .InformacionResena{
     display: flex;
     flex-direction: column;
 
@@ -34,12 +34,12 @@
 
 }
 
-.CabeceraResena{
+.Resena .CabeceraResena{
     display: flex;
     justify-content: space-between;
 }
 
-.InformacionResena img{
+.Resena .InformacionResena img{
     width: 80px;
     height: 110px;
     border-radius: 10px;
@@ -47,15 +47,16 @@
     margin-bottom: 10px;
 }
 
-.InformacionResena > button{
+.Resena .InformacionResena > button{
     all: unset;
 }
-.PieResena{
+
+.Resena .PieResena{
     display: flex;
     justify-content: end;
 }
 
-.PieResena button {
+.Resena .PieResena button {
     all: unset;
 
     display: flex;

@@ -29,7 +29,7 @@ export default function Home() {
     const primerasResenas = resenas.filter((r) => r.id <= 2)
     const primerosNegocios = negocios.filter((r) => r.id <= 3)
     
-    return <div className='Home'>
+    return <div className='HomeCliente'>
 
         <h2>Categorias</h2>
         <div className='CategoriasLista'>
@@ -58,6 +58,8 @@ export default function Home() {
                 <TargetaNegocios key={negocio.id} negocio={negocio}/>
             ))}
         </div>
+
+        
         {modalImagen &&
             <ModalImagen alternarModal={alternarModal} />
         }

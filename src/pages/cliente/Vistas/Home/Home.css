@@ -1,4 +1,4 @@
-.Home{
+.HomeCliente{
     font-size: 16px;
     margin-left: 20px;
     margin-right: 20px;
@@ -8,12 +8,12 @@
     max-height: 60vh;
 }
 
-h2 {
+.HomeCliente h2 {
     margin-top: 10px;
     margin-bottom: 10px;
 }
 
-.CategoriasLista{
+.HomeCliente .CategoriasLista{
     display: flex;
     flex-wrap: wrap;
 
@@ -23,19 +23,19 @@ h2 {
 
 }
 
-.ProductosLista{
+.HomeCliente .ProductosLista{
     display: flex;
     justify-content: space-between;
 }
 
-.ResenasLista{
+.HomeCliente .ResenasLista{
     display: flex;
     flex-direction: column;
 
     gap:20px
 }
 
-.NegociosLista{
+.HomeCliente .NegociosLista{
     display: flex;
     justify-content: space-between;
 }
