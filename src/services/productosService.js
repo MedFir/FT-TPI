@@ -1,16 +1,17 @@
 const productos = [
     {
         id: 1,
-        nombre: 'Helado 1/2 Kg',
+        nombre: 'Heladooo 1/2 Kg',
         puntuacion_media: 4.9,
         esta_disponible: true,
         descripcion: 'Helado artesanal de crema, ideal para compartir.',
         categoria_id: 1,
-        negocio_id: 1,
+        negocio_id: "QuelotesYa!",
         imagen_url: '',
         eliminado: false,
         created_at: '2026-11-09T00:00:00',
         precio: 4300,
+        imagen_url: "../../../../productos/hamburguesa.webp"
     },
     {
         id: 2,
@@ -24,6 +25,7 @@ const productos = [
         eliminado: false,
         created_at: '2026-11-09T00:00:00',
         precio: 6500,
+        imagen_url: "../../../../productos/hamburguesa.webp"
     },
     {
         id: 3,
@@ -37,6 +39,7 @@ const productos = [
         eliminado: false,
         created_at: '2026-11-09T00:00:00',
         precio: 8200,
+        imagen_url: "../../../../productos/hamburguesa.webp"
     },
     {
         id: 4,
@@ -50,6 +53,7 @@ const productos = [
         eliminado: false,
         created_at: '2026-11-09T00:00:00',
         precio: 5700,
+        imagen_url: "../../../../productos/hamburguesa.webp"
     },
 ]
 
