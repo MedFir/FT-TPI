@@ -1,14 +1,13 @@
-import './Filtros.css'
+import '../FiltrosCompartidos.css'
 
-export default function Filtros({ filtros, setFiltros }) {
+export default function FiltrosProductos({ filtros, setFiltros }) {
     return (
-        <div className="cliente-panel-filtros" id="cliente-panel-filtros">
+        <div className="cliente-panel-filtros" id="cliente-panel-filtros" aria-label="Filtros de productos">
             <div className="cliente-filtro-fila">
-                <span>Ordenar por:</span>
+                <label htmlFor="cliente-filtro-producto-orden">Ordenar por:</label>
                 <select
                     className="cliente-filtro-select"
-                    id="cliente-filtro-orden"
-                    aria-label="Ordenar por"
+                    id="cliente-filtro-producto-orden"
                     value={filtros.orden}
                     onChange={(event) =>
                         setFiltros((actuales) => ({ ...actuales, orden: event.target.value }))
@@ -20,11 +19,10 @@ export default function Filtros({ filtros, setFiltros }) {
                 </select>
             </div>
             <div className="cliente-filtro-fila">
-                <span>Filtrar por categoría:</span>
+                <label htmlFor="cliente-filtro-producto-categoria">Filtrar por categoría:</label>
                 <select
                     className="cliente-filtro-select"
-                    id="cliente-filtro-categoria"
-                    aria-label="Filtrar por categoría"
+                    id="cliente-filtro-producto-categoria"
                     value={filtros.categoria}
                     onChange={(event) =>
                         setFiltros((actuales) => ({ ...actuales, categoria: event.target.value }))
@@ -38,9 +36,10 @@ export default function Filtros({ filtros, setFiltros }) {
                 </select>
             </div>
             <div className="cliente-filtro-fila cliente-filtro-precio">
-                <span>Rango de precio:</span>
+                <label htmlFor="cliente-filtro-producto-precio-minimo">Rango de precio:</label>
                 <div className="cliente-filtro-rango">
                     <input
+                        id="cliente-filtro-producto-precio-minimo"
                         type="number"
                         min="0"
                         placeholder="Mínimo"

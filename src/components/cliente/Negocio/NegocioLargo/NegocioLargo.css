@@ -1,0 +1,107 @@
+.cliente-negocio-largo {
+    display: grid;
+    grid-template-columns: minmax(72px, 30%) minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 9px;
+    min-height: 140px;
+    padding: 5px;
+    border: 4px solid #fff;
+    border-radius: 24px;
+    background: #fff;
+}
+
+.cliente-negocio-largo-imagen {
+    display: grid;
+    width: 100%;
+    aspect-ratio: 0.8;
+    place-items: center;
+    overflow: hidden;
+    border-radius: 16px;
+    background: #f7e9de;
+}
+
+.cliente-negocio-largo-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cliente-negocio-largo-imagen span {
+    font-size: clamp(32px, 10vw, 48px);
+    line-height: 1;
+}
+
+.cliente-negocio-largo-detalle {
+    min-width: 0;
+    align-self: center;
+    padding: 4px 0;
+}
+
+.cliente-negocio-largo-detalle h2 {
+    overflow: hidden;
+    color: #252525;
+    font-size: clamp(13px, 3.5vw, 16px);
+    line-height: 1.2;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.cliente-negocio-largo-calificacion,
+.cliente-negocio-largo-estado {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: clamp(11px, 2.8vw, 14px);
+}
+
+.cliente-negocio-largo-calificacion {
+    margin-top: 8px;
+    color: #b57900;
+    font-weight: 600;
+}
+
+.cliente-negocio-largo-calificacion span {
+    font-size: 16px;
+}
+
+.cliente-negocio-largo-estado {
+    margin-top: 7px;
+}
+
+.cliente-negocio-largo-estado.abierto {
+    color: #20a85a;
+}
+
+.cliente-negocio-largo-estado.cerrado {
+    color: #817a77;
+}
+
+.cliente-negocio-largo-estado span {
+    width: 8px;
+    height: 8px;
+    flex: 0 0 auto;
+    border-radius: 50%;
+    background: currentColor;
+}
+
+.cliente-negocio-largo-ver {
+    display: grid;
+    min-width: 96px;
+    min-height: 52px;
+    padding: 6px 12px;
+    place-items: center;
+    border: 2px solid #f52b3a;
+    border-radius: 999px;
+    background: #fff;
+    color: #f52b3a;
+    font-size: clamp(11px, 3vw, 14px);
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.cliente-negocio-largo-ver:focus-visible {
+    outline: 2px solid #f52b3a;
+    outline-offset: 4px;
+}

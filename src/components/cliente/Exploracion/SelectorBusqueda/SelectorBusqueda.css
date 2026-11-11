@@ -1,0 +1,42 @@
+.cliente-exploracion-buscar {
+    display: grid;
+    grid-template-columns: minmax(70px, 30%) minmax(0, 1fr);
+    align-items: center;
+    gap: 12px;
+    padding: 10px 12px;
+    border-radius: 32px;
+    background: #fff;
+    color: #252525;
+    font-size: 16px;
+}
+
+.cliente-exploracion-opciones {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 4px;
+    border-radius: 999px;
+    background: #ededed;
+}
+
+.cliente-exploracion-opciones button {
+    min-width: 0;
+    min-height: 48px;
+    padding: 8px 6px;
+    border: 0;
+    border-radius: 999px;
+    background: transparent;
+    color: #5f5f5f;
+    cursor: pointer;
+    font: inherit;
+    font-size: 14px;
+}
+
+.cliente-exploracion-opciones button.activo {
+    color: #ff2638;
+    font-weight: 700;
+}
+
+.cliente-exploracion-opciones button:focus-visible {
+    outline: 2px solid #ff2638;
+    outline-offset: -2px;
+}
