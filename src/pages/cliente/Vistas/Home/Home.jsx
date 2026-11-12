@@ -2,7 +2,8 @@ import './Home.css'
 import { useState, useEffect } from 'react'
 
 import TargetaCategorias from '../../../../components/cliente/CategoriaChiquita/CategoriaChiquita.jsx'
-import TargetaProductos from '../../../../components/cliente/Producto/ProductoChiquito/ProductoChiquito.jsx'
+import TargetaProductosChiquita from '../../../../components/cliente/Producto/ProductoChiquito/ProductoChiquito.jsx'
+import TargetaProductosRectangular from '../../../../components/cliente/Producto/ProductoRectangular/ProductoRectagunlar.jsx'
 import TargetaResenas from '../../../../components/resena/Resena.jsx'
 import TargetaNegocios from '../../../../components/cliente/Negocios/NegocioChiquito.jsx'
 
@@ -26,9 +27,10 @@ export default function Home() {
     en un futuro debido a que su utilidad solo servira para las etapas muy tempranas de
     desarrollo*/
     const primerosProductos = productos.filter((p) => p.id <= 3)
+    const cuatroProductos = productos.filter((n)=> n.id <= 4)
     const primerasResenas = resenas.filter((r) => r.id <= 2)
     const primerosNegocios = negocios.filter((r) => r.id <= 3)
-    
+
     return <div className='HomeCliente'>
 
         <h2>Categorias</h2>
@@ -39,9 +41,9 @@ export default function Home() {
         </div>
 
         <h2>Productos destacados</h2>
-        <div className='ProductosLista'>
+        <div className='ProductosDestacados'>
             {primerosProductos.map((producto) => (
-                <TargetaProductos key={producto.id} producto={producto} />
+                <TargetaProductosChiquita key={producto.id} producto={producto} />
             ))}
         </div>
 
@@ -59,7 +61,14 @@ export default function Home() {
             ))}
         </div>
 
-        
+        <h2>Para vos</h2>
+        <h3 style={{color: "#77706C"}}>Recomendados segun tus gustos</h3>
+
+        <div className="ListaParaVos">
+            {cuatroProductos.map((producto)=>(
+                <TargetaProductosRectangular producto={producto} />
+            ))}
+        </div>
         {modalImagen &&
             <ModalImagen alternarModal={alternarModal} />
         }

@@ -1,0 +1,41 @@
+.ProductoRectangular{
+    display: flex;
+    flex-direction: column;
+
+    background-color: #ffffff;
+    border: 2px solid #EAE2DC;
+    border-radius: 20px;
+
+    margin-top: 10px;
+
+    width: 130px;
+}
+
+.ProductoRectangular{
+    font-weight: bold;
+}
+
+.CabeceraProductoRectangular{
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center
+    ;
+    gap: 10px;
+}
+
+.ProductoRectangular img{
+    width: 95%;
+    height: 45%;
+
+    border-radius: 20px ;
+}
+
+.PieProductoRectangular{
+    display: flex;
+    flex-direction: column;
+
+    gap:5px;
+    padding: 3px;
+}

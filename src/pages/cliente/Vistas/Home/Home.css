@@ -1,14 +1,16 @@
 .HomeCliente{
     font-size: 16px;
+
     margin-left: 20px;
     margin-right: 20px;
+    padding-bottom: 140px;
+
     overflow-y: visible;
 
     overflow: auto;
-    max-height: 60vh;
 }
 
-.HomeCliente h2 {
+.HomeCliente h2 , .HomeCliente h3 {
     margin-top: 10px;
     margin-bottom: 10px;
 }
@@ -23,7 +25,7 @@
 
 }
 
-.HomeCliente .ProductosLista{
+.HomeCliente .ProductosDestacados{
     display: flex;
     justify-content: space-between;
 }
@@ -38,4 +40,11 @@
 .HomeCliente .NegociosLista{
     display: flex;
     justify-content: space-between;
+}
+
+.HomeCliente .ListaParaVos{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap:10px;
 }

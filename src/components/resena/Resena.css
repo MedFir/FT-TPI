@@ -76,6 +76,8 @@
     align-items: center;
 
     background-color: rgba(0, 0, 0, 0.6);
+
+    z-index: 1001;
 }
 
 .ModalImagenFondo img{
