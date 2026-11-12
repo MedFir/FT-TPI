@@ -7,8 +7,9 @@
     border-radius: 20px;
 
     margin-top: 10px;
+    padding: 10px;
 
-    width: 130px;
+    width: 300px;
 }
 
 .ProductoRectangular{
@@ -25,9 +26,17 @@
     gap: 10px;
 }
 
-.ProductoRectangular img{
-    width: 95%;
-    height: 45%;
+
+.BodyProductoRectangular{
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+}
+
+.BodyProductoRectangular img{
+    height: 150px;
+    width: 150px;
 
     border-radius: 20px ;
 }
@@ -35,6 +44,7 @@
 .PieProductoRectangular{
     display: flex;
     flex-direction: column;
+    align-items: start;
 
     gap:5px;
     padding: 3px;

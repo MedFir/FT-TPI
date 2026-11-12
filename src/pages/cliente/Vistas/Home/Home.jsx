@@ -66,7 +66,7 @@ export default function Home() {
 
         <div className="ListaParaVos">
             {cuatroProductos.map((producto)=>(
-                <TargetaProductosRectangular producto={producto} />
+                <TargetaProductosRectangular key={producto.id} producto={producto} />
             ))}
         </div>
         {modalImagen &&
