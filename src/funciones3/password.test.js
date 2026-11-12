@@ -1,0 +1,194 @@
+import { describe, test, expect } from "vitest";
+import { validarPassword, MENSAJES } from "./password.js";
+
+// ─────────────────────────────────────────────────────────────────────
+// RESUELTO - dos ejemplos, uno de cada tipo
+// ─────────────────────────────────────────────────────────────────────
+describe("validarPassword - casos válidos", () => {
+  test("acepta una contraseña en el límite inferior de longitud (8)", () => {
+    // Arrange
+    const password = "Abc1234x"; // exactamente 8 caracteres
+
+    // Act
+    const resultado = validarPassword(password);
+
+    // Assert
+    expect(resultado).toEqual({ valida: true, errores: [] });
+  });
+});
+
+describe("validarPassword - casos inválidos", () => {
+  test("rechaza una contraseña sin mayúsculas", () => {
+    const resultado = validarPassword("abc1234x");
+
+    expect(resultado.valida).toBe(false);
+    expect(resultado.errores).toContain(MENSAJES.MAYUSCULA);
+  });
+});
+
+// ─────────────────────────────────────────────────────────────────────
+// TU TURNO
+//
+// Como mínimo tienen que estar:
+//
+//   VALORES LÍMITE de longitud
+//     - 7 caracteres  (uno menos que el mínimo)
+//     - 8 caracteres  (mínimo, ya resuelto arriba)
+//     - 20 caracteres (máximo)
+//     - 21 caracteres (uno más que el máximo)
+//
+//   PARTICIÓN por cada regla de contenido
+//     - sin mayúscula (ya resuelto)
+//     - sin número
+//     - con espacio (al principio, en el medio y al final: ¿son el mismo caso?)
+//
+//   ACUMULACIÓN de errores
+//     - una contraseña que viole 2 reglas devuelve 2 errores
+//     - una contraseña que viole las 4 reglas devuelve 4 errores
+//
+//   CASOS DE LA VIDA REAL
+//     - cadena vacía
+//     - null / undefined
+//     - un número en lugar de un string
+//     - una contraseña con ñ o acentos
+// ─────────────────────────────────────────────────────────────────────
+
+describe("validarPassword - valores límite de longitud", () => {
+  test("rechaza una contraseña de 7 caracteres", ()=>{
+    let password = validarPassword("fsdHf&d")
+    expect(password.valida).toBe(false);
+    expect(password.errores).toContain(MENSAJES.LONGITUD)
+  });
+
+  test("acepta una contraseña de 8 caracteres", ()=>{
+    let password = validarPassword("fsdHf&d9")
+    expect(password).toEqual({ valida: true, errores: []})
+  });
+
+  test("acepta una contraseña de 20 caracteres", ()=>{
+    let password = validarPassword("fsdHf&d9fsdHf&d9fiet")
+    expect(password).toEqual({ valida: true, errores: []})
+  });
+
+  test("rechaza una contraseña de 21 caracteres", ()=>{
+    let password = validarPassword("fsdHf&d9fsdHf&d9fieyt")
+    expect(password).toEqual({ valida: false, errores: [MENSAJES.LONGITUD]})
+  });
+});
+
+describe("validarPassword - reglas de contenido", () => {
+  test("rechaza una contraseña sin números", () => {
+    let password = validarPassword("Abcdefgh");
+
+    expect(password.valida).toBe(false);
+    expect(password.errores).toContain(MENSAJES.NUMERO);
+  });
+
+  test("rechaza una contraseña con un espacio al principio", () => {
+    let password = validarPassword(" Abc1234x");
+
+    expect(password.valida).toBe(false);
+    expect(password.errores).toContain(MENSAJES.ESPACIOS);
+  });
+
+  test("rechaza una contraseña con un espacio en el medio", () => {
+    let password = validarPassword("Abc 1234x");
+
+    expect(password.valida).toBe(false);
+    expect(password.errores).toContain(MENSAJES.ESPACIOS);
+  });
+
+  test("rechaza una contraseña con un espacio al final", () => {
+    let password = validarPassword("Abc1234x ");
+
+    expect(password.valida).toBe(false);
+    expect(password.errores).toContain(MENSAJES.ESPACIOS);
+  });
+});
+
+describe("validarPassword - acumulación de errores", () => {
+  test("devuelve 2 errores si faltan mayúscula y número", () => {
+    let password = validarPassword("abcdefgh");
+
+    expect(password.valida).toBe(false);
+    expect(password.errores).toHaveLength(2);
+    expect(password.errores).toContain(MENSAJES.MAYUSCULA);
+    expect(password.errores).toContain(MENSAJES.NUMERO);
+  });
+
+  test("devuelve 4 errores si viola todas las reglas", () => {
+    let password = validarPassword("a bc");
+
+    expect(password.valida).toBe(false);
+    expect(password.errores).toHaveLength(4);
+    expect(password.errores).toContain(MENSAJES.LONGITUD);
+    expect(password.errores).toContain(MENSAJES.MAYUSCULA);
+    expect(password.errores).toContain(MENSAJES.NUMERO);
+    expect(password.errores).toContain(MENSAJES.ESPACIOS);
+  });
+});
+
+describe("validarPassword - entradas inesperadas", () => {
+  test("rechaza una cadena vacía sin lanzar excepción", () => {
+    let password = validarPassword("");
+
+    expect(password.valida).toBe(false);
+    expect(password.errores).toContain(MENSAJES.LONGITUD);
+    expect(password.errores).toContain(MENSAJES.MAYUSCULA);
+    expect(password.errores).toContain(MENSAJES.NUMERO);
+  });
+
+  test("rechaza null sin lanzar excepción", () => {
+    let password = validarPassword(null);
+
+    expect(password.valida).toBe(false);
+    expect(password.errores).toContain(MENSAJES.TIPO);
+  });
+
+  test("rechaza undefined sin lanzar excepción", () => {
+    let password = validarPassword(undefined);
+
+    expect(password.valida).toBe(false);
+    expect(password.errores).toContain(MENSAJES.TIPO);
+  });
+
+  test("rechaza un número sin lanzar excepción", () => {
+    let password = validarPassword(12345678);
+
+    expect(password.valida).toBe(false);
+    expect(password.errores).toContain(MENSAJES.TIPO);
+  });
+});
+
+describe("validarPassword - caracteres del español", () => {
+  test("acepta una contraseña con ñ", () => {
+    let password = validarPassword("Contraseña1");
+
+    expect(password.valida).toBe(true);
+    expect(password.errores).toEqual([]);
+  });
+
+  test("acepta una contraseña con acentos", () => {
+    let password = validarPassword("Árbol123");
+
+    expect(password.valida).toBe(true);
+    expect(password.errores).toEqual([]);
+  });
+});
+
+/*
+|
+| CASOS EXTRA PARA PRACTICAR (OPCIONALES)
+| 
+*/
+
+describe("validarPassword - casos extra (opcional)", () => {
+  test.todo("acepta una contraseña cuya única mayúscula es acentuada (Á, Ñ)");
+  test.todo("rechaza una contraseña con un tab o salto de línea");
+});
+
+/* ─────────────────────────────────────────────────────────────────────
+   DESAFÍO OPCIONAL
+   Reescribí los casos de longitud usando `test.each` con una tabla.
+   Fijate cómo la tabla del código queda casi igual a la del documento.
+   ───────────────────────────────────────────────────────────────────── */

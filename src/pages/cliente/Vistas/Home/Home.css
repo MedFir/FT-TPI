@@ -1,0 +1,50 @@
+.HomeCliente{
+    font-size: 16px;
+
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-bottom: 140px;
+
+    overflow-y: visible;
+
+    overflow: auto;
+}
+
+.HomeCliente h2 , .HomeCliente h3 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.HomeCliente .CategoriasLista{
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: space-evenly;
+
+    gap:5px;
+
+}
+
+.HomeCliente .ProductosDestacados{
+    display: flex;
+    justify-content: space-between;
+}
+
+.HomeCliente .ResenasLista{
+    display: flex;
+    flex-direction: column;
+
+    gap:20px
+}
+
+.HomeCliente .NegociosLista{
+    display: flex;
+    justify-content: space-between;
+}
+
+.HomeCliente .ListaParaVos{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap:10px;
+}

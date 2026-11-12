@@ -1,0 +1,89 @@
+.Resena{
+    display: flex;
+    flex-direction: column;
+
+    padding: 10px;
+    gap: 10px;
+
+    background-color: #ffffff;
+
+    border-radius: 5px;
+}
+
+.Resena p{
+    font-size: 15px;
+}
+
+.Resena .BodyResena{
+    display: flex;
+    gap: 10px;
+}
+
+.Resena .BodyResena > img{
+    width: 50px;
+    height: 50px;
+
+    border-radius: 50%;
+}
+
+.Resena .InformacionResena{
+    display: flex;
+    flex-direction: column;
+
+    width: 80%;
+
+}
+
+.Resena .CabeceraResena{
+    display: flex;
+    justify-content: space-between;
+}
+
+.Resena .InformacionResena img{
+    width: 80px;
+    height: 110px;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.Resena .InformacionResena > button{
+    all: unset;
+}
+
+.Resena .PieResena{
+    display: flex;
+    justify-content: end;
+}
+
+.Resena .PieResena button {
+    all: unset;
+
+    display: flex;
+    font-weight: bold;
+}
+
+.ModalImagenFondo{
+    position: fixed;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgba(0, 0, 0, 0.6);
+
+    z-index: 1001;
+}
+
+.ModalImagenFondo img{
+    position: relative;
+    width: 75vw;
+
+    border-radius: 20px;
+}
+
