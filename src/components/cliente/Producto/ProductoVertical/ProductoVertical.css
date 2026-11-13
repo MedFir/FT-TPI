@@ -1,0 +1,66 @@
+.ProductoVertical{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 120px;
+    min-height: 300px;
+
+    background-color: #FFFFFF;
+    border: 2px solid #EAE2DC;
+    
+    padding: 3px;
+    border-radius: 10px;
+}
+
+.ProductoVertical > div{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    max-width: 97px;
+}
+
+.ProductoVertical img{
+    width: 90px;
+    height: 90px;
+
+    border-radius: 20px;
+}
+
+.ProductoVertical p{
+    font-size: 12px;
+}
+
+.ProductoVertical span{
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.ProductoVertical .EstaDisponible{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.ProductoVertical .EstaDisponible div{
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.ProductoVertical button{
+    border-radius: 30px;
+    border: 1px solid #F52B3A;
+    color: #F52B3A;
+    font-weight: bold;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+}

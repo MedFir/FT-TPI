@@ -2,10 +2,10 @@ import './Home.css'
 import { useState, useEffect } from 'react'
 
 import TargetaCategorias from '../../../../components/cliente/CategoriaChiquita/CategoriaChiquita.jsx'
-import TargetaProductosChiquita from '../../../../components/cliente/Producto/ProductoChiquito/ProductoChiquito.jsx'
+import ProductoVertical from '../../../../components/cliente/Producto/ProductoVertical/ProductoVertical.jsx'
 import TargetaProductosRectangular from '../../../../components/cliente/Producto/ProductoRectangular/ProductoRectagunlar.jsx'
 import TargetaResenas from '../../../../components/resena/Resena.jsx'
-import TargetaNegocios from '../../../../components/cliente/Negocios/NegocioChiquito.jsx'
+import NegocioRectangular from '../../../../components/Negocio/NegocioRectangular/NegocioRectangular.jsx'
 
 import ModalImagen from '../../../../components/resena/ModalImagen.jsx'
 
@@ -43,7 +43,7 @@ export default function Home() {
         <h2>Productos destacados</h2>
         <div className='ProductosDestacados'>
             {primerosProductos.map((producto) => (
-                <TargetaProductosChiquita key={producto.id} producto={producto} />
+                <ProductoVertical key={producto.id} producto={producto} />
             ))}
         </div>
 
@@ -57,7 +57,7 @@ export default function Home() {
         <h2>Negocios destacados</h2>
         <div className="NegociosLista">
             {primerosNegocios.map((negocio) => (
-                <TargetaNegocios key={negocio.id} negocio={negocio}/>
+                <NegocioRectangular key={negocio.id} negocio={negocio}/>
             ))}
         </div>
 

@@ -1,0 +1,40 @@
+.not-found-view {
+  display: grid;
+  min-height: 100vh;
+  min-height: 100svh;
+  place-items: center;
+  padding: 24px;
+  background: #ffe8e9;
+  text-align: center;
+}
+
+.not-found-view--embedded {
+  min-height: 45vh;
+  background: transparent;
+}
+
+.not-found-card {
+  width: min(100%, 520px);
+  padding: clamp(28px, 5vw, 48px);
+  border-radius: 20px;
+  background: #fff;
+}
+
+.not-found-code {
+  margin-bottom: 8px;
+  color: #fa293c;
+  font-size: clamp(48px, 10vw, 72px);
+  font-weight: 800;
+  line-height: 1;
+}
+
+.not-found-card h1 {
+  margin-bottom: 10px;
+  font-size: clamp(20px, 4vw, 28px);
+}
+
+.not-found-card p:last-child {
+  color: #555;
+  font-size: 15px;
+  line-height: 1.5;
+}

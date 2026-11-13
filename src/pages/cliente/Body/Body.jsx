@@ -12,38 +12,35 @@ import Negocio from '../Vistas/Negocio/Negocio.jsx'
 import Buscador from '../Buscador/Buscador.jsx'
 import Header from '../Header/Header.jsx'
 import Navbar from '../Navbar/Navbar.jsx'
+import NotFound from '../../../components/NotFound/NotFound.jsx'
 
-import {Router, Switch, Route} from "wouter";
+import { Switch, Route, Redirect } from 'wouter'
 
 export default function Body() {
     /* Esto es para decirle al componente Exploracion, que se a tocado el boton para mostrar filtros */
     const [filtrosAbiertos, setFiltrosAbiertos] = useState(false)
 
     return (
-        <>
-        <Router>
-            <main className="body-cliente">
-                <Header />
-                <Buscador
-                    filtrosAbiertos={filtrosAbiertos}
-                    onToggleFiltros={() => setFiltrosAbiertos((abiertos) => !abiertos)}
-                />
-                <Switch>
-                    <Route path ="/inicio" component = {Home} />
-                    <Route path="/exploracion">
-                        {() => <Exploracion filtrosAbiertos={filtrosAbiertos} />}
-                    </Route>
-                    <Route path ="/carrito" component = {Carrito} />
-                    <Route path ="/pedidos" component = {HistorialPedidos} />
-                    <Route path ="/perfil" component = {Perfil} />
-
-                    <Route path ="/producto" component = {Producto} />
-                    <Route path ="/negocio" component = {Negocio} />
-                </Switch>
-            </main>
+        <main className="body-cliente">
+            <Header />
+            <Buscador
+                filtrosAbiertos={filtrosAbiertos}
+                onToggleFiltros={() => setFiltrosAbiertos((abiertos) => !abiertos)}
+            />
+            <Switch>
+                <Route path="/" component={() => <Redirect to="/inicio" replace />} />
+                <Route path="/inicio" component={Home} />
+                <Route path="/exploracion">
+                    {() => <Exploracion filtrosAbiertos={filtrosAbiertos} />}
+                </Route>
+                <Route path="/carrito" component={Carrito} />
+                <Route path="/pedidos" component={HistorialPedidos} />
+                <Route path="/perfil" component={Perfil} />
+                <Route path="/producto" component={Producto} />
+                <Route path="/negocio" component={Negocio} />
+                <Route>{() => <NotFound embedded />}</Route>
+            </Switch>
             <Navbar />
-        </Router>
-        </>
-
+        </main>
     )
 }
