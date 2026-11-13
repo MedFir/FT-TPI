@@ -23,7 +23,7 @@ export default function Resenas({ resena, alternarModal }) {
     return (
         <div className='Resena'>
             <div className='BodyResena'>
-                <img src="./../../../resenas/imagenPerfilEjemplo.webp" alt="no cargo" />
+                <img src={resena.img_perfil ?? "/resenas/usuarioAvatar.png"} alt={`Foto de perfil de ${resena.nombre_cliente}`} />
                 <div className='InformacionResena'>
                     <div className="CabeceraResena">
                         <p style={{ fontWeight: "bold" }}>{resena.nombre_cliente}</p>
@@ -32,8 +32,11 @@ export default function Resenas({ resena, alternarModal }) {
                     <p style={{ color: "#77706C", fontSize: "12px" }}>{calcularTiempoTranscurrido(resena.created_at)} · {resena.nombre_negocio}</p>
                     <p style={{ color: "#77706C", fontSize: "12px" }}>{resena.nombre_producto}</p>
                     {resena.img_comentario != null && (
-                        <button onClick={alternarModal}>
-                            <img src="./../../../resenas/ejemploResena.webp" alt="imagen adjuntada" />
+                        <button className="ResenaImagenBoton" onClick={alternarModal} type="button" aria-label="Ver imagen de la reseña">
+                            <img className="ResenaImagen" src={resena.img_comentario} alt="imagen adjuntada" />
+                            <span className="ResenaImagenOverlay" aria-hidden="true">
+                                <img className="ResenaIconoAmpliar" src="/resenas/iconoAmpliarResena.png" alt="" />
+                            </span>
                         </button>
                     )}
                     <p style={{ marginTop: "10px"}}>{resena.texto}</p>

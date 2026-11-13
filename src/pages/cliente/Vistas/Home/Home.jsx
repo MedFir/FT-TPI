@@ -1,5 +1,5 @@
 import './Home.css'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 
 import TargetaCategorias from '../../../../components/cliente/CategoriaChiquita/CategoriaChiquita.jsx'
 import ProductoVertical from '../../../../components/cliente/Producto/ProductoVertical/ProductoVertical.jsx'

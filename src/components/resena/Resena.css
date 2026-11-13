@@ -39,15 +39,50 @@
     justify-content: space-between;
 }
 
-.Resena .InformacionResena img{
+.Resena .InformacionResena .ResenaImagenBoton{
+    position: relative;
+    display: inline-block;
     width: 80px;
     height: 110px;
-    border-radius: 10px;
     margin-top: 10px;
     margin-bottom: 10px;
+    border: none;
+    padding: 0;
+    background: transparent;
+    cursor: pointer;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
-.Resena .InformacionResena > button{
+.Resena .InformacionResena .ResenaImagen{
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    filter: brightness(0.78) contrast(1.05);
+}
+
+.Resena .InformacionResena .ResenaImagenOverlay{
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.Resena .InformacionResena .ResenaIconoAmpliar{
+    width: 36px;
+    height: 36px;
+    display: block;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.35));
+}
+.Resena .InformacionResena .ResenaIconoAmpliar:active{
+    transition: 200ms;
+    scale: 1.1;
+}
+
+.Resena .InformacionResena > button:not(.ResenaImagenBoton){
     all: unset;
 }
 
