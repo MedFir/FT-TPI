@@ -1,5 +1,9 @@
 import './HistorialPedidos.css'
+import pedidos from '../../../../services/pedidosService.js'
 
 export default function HistorialPedidos() {
-    return <h1>Historial de pedidos</h1>
+    console.log(pedidos);
+    return <>
+        <h1>Historial de pedidos</h1>
+    </>
 }
