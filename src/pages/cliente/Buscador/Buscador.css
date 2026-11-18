@@ -6,17 +6,17 @@
 .cliente-buscador-barra {
     display: flex;
     align-items: center;
-    gap: 14px;
+    gap: 10px;
     width: 100%;
-    min-height: 94px;
-    padding: 12px 24px 12px 34px;
-    border-radius: 30px;
+    min-height: 72px;
+    padding: 10px 18px;
+    border-radius: 25px;
     background-color: #fff;
 }
 
 .cliente-buscador-lupa {
-    width: 28px;
-    height: 28px;
+    width: 24px;
+    height: 24px;
     flex-shrink: 0;
     object-fit: contain;
 }
@@ -29,7 +29,7 @@
     background: transparent;
     color: #252525;
     font: inherit;
-    font-size: 18px;
+    font-size: 15px;
 }
 
 .cliente-buscador-input::placeholder {
@@ -39,8 +39,8 @@
 
 .cliente-buscador-boton-filtros {
     display: flex;
-    width: 48px;
-    height: 48px;
+    width: 40px;
+    height: 40px;
     flex-shrink: 0;
     align-items: center;
     justify-content: center;
@@ -51,8 +51,8 @@
 }
 
 .cliente-buscador-boton-filtros img {
-    width: 40px;
-    height: 40px;
+    width: 34px;
+    height: 34px;
     object-fit: contain;
 }
 
@@ -60,33 +60,4 @@
 .cliente-buscador input:focus-visible {
     outline: 2px solid #505050;
     outline-offset: 3px;
-}
-
-@media (max-width: 560px) {
-    .cliente-buscador-barra {
-        min-height: 72px;
-        gap: 10px;
-        padding: 10px 18px;
-        border-radius: 25px;
-    }
-
-    .cliente-buscador-input {
-        font-size: 15px;
-    }
-
-    .cliente-buscador-lupa {
-        width: 24px;
-        height: 24px;
-    }
-
-    .cliente-buscador-boton-filtros {
-        width: 40px;
-        height: 40px;
-    }
-
-    .cliente-buscador-boton-filtros img {
-        width: 34px;
-        height: 34px;
-    }
-
 }

@@ -1,0 +1,99 @@
+.HistorialPedidos .ListaPedidos .TicketPedido{
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 116px;
+    grid-template-rows: auto 1fr;
+    align-items: center;
+    column-gap: 8px;
+    row-gap: 10px;
+    min-height: 149px;
+    padding: 14px 12px 12px;
+    border: 1px solid #EAE2DC;
+    border-radius: 26px;
+    background-color: #FFFFFF;
+    cursor: pointer;
+    transition: background-color 100ms ease;
+}
+
+.HistorialPedidos .ListaPedidos .TicketPedido:active{
+    background-color: #DDDDDD;
+}
+
+.HistorialPedidos .ListaPedidos .TicketPedido:focus-visible{
+    outline: 2px solid #F52B3A;
+    outline-offset: 3px;
+}
+
+.HistorialPedidos .ListaPedidos .TicketPedido .TicketPedidoNegocio{
+    display: flex;
+    min-width: 0;
+    align-items: center;
+    gap: 11px;
+}
+
+.HistorialPedidos .ListaPedidos .TicketPedido .TicketPedidoNegocio .TicketPedidoNegocioIcono{
+    display: flex;
+    width: 52px;
+    height: 52px;
+    flex: 0 0 52px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #1686F8;
+    font-size: 26px;
+}
+
+.HistorialPedidos .ListaPedidos .TicketPedido .TicketPedidoNegocio .TicketPedidoNegocioDatos{
+    min-width: 0;
+}
+
+.HistorialPedidos .ListaPedidos .TicketPedido .TicketPedidoNegocio .TicketPedidoNegocioDatos .TicketPedidoNombre{
+    overflow: hidden;
+    color: #333333;
+    font-size: 19px;
+    line-height: 1.2;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.HistorialPedidos .ListaPedidos .TicketPedido .TicketPedidoNegocio .TicketPedidoNegocioDatos .TicketPedidoFecha{
+    margin-top: 8px;
+    color: #333333;
+    font-size: 15px;
+    text-transform: capitalize;
+}
+
+.HistorialPedidos .ListaPedidos .TicketPedido .TicketPedidoTotal{
+    display: flex;
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    min-height: 90px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #FF4854;
+    border-radius: 27px;
+    color: #FF4854;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.HistorialPedidos .ListaPedidos .TicketPedido .TicketPedidoProductos{
+    display: flex;
+    grid-column: 1;
+    flex-wrap: wrap;
+    gap: 10px;
+    list-style: none;
+}
+
+.HistorialPedidos .ListaPedidos .TicketPedido .TicketPedidoProductos .TicketPedidoProducto{
+    display: flex;
+    width: 46px;
+    height: 46px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    background-color: #F7EADF;
+    font-size: 24px;
+}

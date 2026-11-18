@@ -13,7 +13,7 @@ export default function ProductoVertical({producto}){
                     <div style={{backgroundColor: producto.esta_disponible ? "#25A55B" : "#F52B3A"}}></div>
                     <p style={{color: producto.esta_disponible ? "#25A55B" : "#F52B3A"}}>Disponible</p>
                 </div>
-                <button onClick={()=>alert("Aca deberia de llevarte a la seccion de buscador pues creo nose")}>+ Agregar</button>
+                <button>+ Agregar</button>
             </div>
         </div>
     )

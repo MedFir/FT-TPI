@@ -42,9 +42,53 @@
     justify-content: space-between;
 }
 
+.HomeCliente > h3{
+    font-size: 14px;
+    font-weight: 400;
+    margin-top: -2px;
+    margin-bottom: 12px;
+}
+
 .HomeCliente .ListaParaVos{
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap:10px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px 14px;
+}
+
+.HomeCliente .ListaParaVos .ProductoRectangular{
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+    padding: 6px;
+    border-width: 1px;
+}
+
+.HomeCliente .ListaParaVos .BodyProductoRectangular img{
+    width: 100%;
+    height: 102px;
+    object-fit: contain;
+    background-color: #F7EADF;
+    border-radius: 17px;
+}
+
+.HomeCliente .ListaParaVos .PieProductoRectangular{
+    gap: 5px;
+    padding: 8px 7px 5px;
+}
+
+.HomeCliente .ListaParaVos .PieProductoRectangular p:first-child{
+    font-size: 14px;
+    line-height: 1.2;
+}
+
+.HomeCliente .ListaParaVos .PieProductoRectangular p:nth-child(2){
+    font-size: 12px !important;
+}
+
+.HomeCliente .ListaParaVos .PieProductoRectangular p:nth-child(2)::before{
+    content: "★ ";
+}
+
+.HomeCliente .ListaParaVos .PieProductoRectangular p:nth-child(3){
+    font-size: 16px !important;
 }

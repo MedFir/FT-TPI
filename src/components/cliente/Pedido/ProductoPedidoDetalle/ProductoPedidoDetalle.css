@@ -1,0 +1,55 @@
+.HistorialPedidos .DetallePedido .DetallePedidoListaProductos .ProductoPedidoDetalle{
+    display: grid;
+    grid-template-columns: 58px minmax(0, 1fr) auto;
+    align-items: center;
+    column-gap: 8px;
+    row-gap: 4px;
+    color: #333333;
+    font-size: 13px;
+}
+
+.HistorialPedidos .DetallePedido .DetallePedidoListaProductos .ProductoPedidoDetalle .ProductoPedidoDetalleIcono{
+    display: flex;
+    width: 58px;
+    height: 58px;
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9px;
+    background-color: #F7EADF;
+    font-size: 30px;
+}
+
+.HistorialPedidos .DetallePedido .DetallePedidoListaProductos .ProductoPedidoDetalle .ProductoPedidoDetalleDatos{
+    grid-column: 2;
+    min-width: 0;
+}
+
+.HistorialPedidos .DetallePedido .DetallePedidoListaProductos .ProductoPedidoDetalle .ProductoPedidoDetalleNombre{
+    color: #333333;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+.HistorialPedidos .DetallePedido .DetallePedidoListaProductos .ProductoPedidoDetalle .ProductoPedidoDetallePrecios{
+    display: flex;
+    grid-column: 3;
+    grid-row: 1 / span 2;
+    flex-direction: column;
+    gap: 10px;
+    text-align: right;
+}
+
+.HistorialPedidos .DetallePedido .DetallePedidoListaProductos .ProductoPedidoDetalle .ProductoPedidoDetallePrecios p{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 4px;
+    white-space: nowrap;
+}
+
+.HistorialPedidos .DetallePedido .DetallePedidoListaProductos .ProductoPedidoDetalle .ProductoPedidoDetallePrecios strong{
+    color: #FF4854;
+}

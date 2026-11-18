@@ -43,14 +43,18 @@
     align-items: center;
     justify-content: center;
 
-    width: 75%;
+    width: 65%;
     padding: 12px;
 
     border: solid 2px #F52B3A;
     border-radius: 30px;
 
-    font-size: 13px;
+    font-size: 13px; 
     font-weight: bold;
     text-decoration: underline;
     color: #F52B3A;
+}
+.NegocioRectangularPie button:active{
+    transition: 150ms;
+    scale: 1.1;
 }

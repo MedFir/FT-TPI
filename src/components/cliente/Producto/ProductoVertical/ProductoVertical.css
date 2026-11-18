@@ -10,7 +10,7 @@
     border: 2px solid #EAE2DC;
     
     padding: 3px;
-    border-radius: 10px;
+    border-radius: 20px;
 }
 
 .ProductoVertical > div{
@@ -55,6 +55,7 @@
     border-radius: 30px;
     border: 1px solid #F52B3A;
     color: #F52B3A;
+    background-color: #FFFFFF;
     font-weight: bold;
 
     display: flex;
@@ -63,4 +64,8 @@
     padding: 10px;
     padding-left: 15px;
     padding-right: 15px;
+}
+.ProductoVertical button:active{
+    transition: 150ms;
+    scale: 1.1;
 }
