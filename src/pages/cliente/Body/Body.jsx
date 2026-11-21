@@ -38,7 +38,7 @@ export default function Body() {
                 <Route path="/perfil" component={Perfil} />
                 <Route path="/producto" component={Producto} />
                 <Route path="/negocio" component={Negocio} />
-                <Route>{() => <NotFound embedded />}</Route>
+                <Route>{() => <NotFound />}</Route>
             </Switch>
             <Navbar />
         </main>

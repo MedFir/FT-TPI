@@ -5,8 +5,6 @@
     margin-right: 20px;
     padding-bottom: 140px;
 
-    overflow-y: visible;
-
     overflow: auto;
 }
 
@@ -76,19 +74,19 @@
     padding: 8px 7px 5px;
 }
 
-.HomeCliente .ListaParaVos .PieProductoRectangular p:first-child{
+.HomeCliente .ListaParaVos .NombreProductoRectangular{
     font-size: 14px;
     line-height: 1.2;
 }
 
-.HomeCliente .ListaParaVos .PieProductoRectangular p:nth-child(2){
+.HomeCliente .ListaParaVos .PuntuacionProductoRectangular{
     font-size: 12px !important;
 }
 
-.HomeCliente .ListaParaVos .PieProductoRectangular p:nth-child(2)::before{
+.HomeCliente .ListaParaVos .PuntuacionProductoRectangular::before{
     content: "★ ";
 }
 
-.HomeCliente .ListaParaVos .PieProductoRectangular p:nth-child(3){
+.HomeCliente .ListaParaVos .PrecioProductoRectangular{
     font-size: 16px !important;
 }

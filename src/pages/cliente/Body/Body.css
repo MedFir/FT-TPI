@@ -1,7 +1,9 @@
 .body-cliente {
+    display: flex;
+    flex-direction: column;
     width: 100vw;
+    height: 100vh;
+    height: 100svh;
     min-height: 100vh;
     background-color: #FFE8E9;
-    /*color temporal*/
-
 }
