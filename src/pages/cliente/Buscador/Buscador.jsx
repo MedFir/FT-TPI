@@ -3,7 +3,7 @@ import './Buscador.css'
 
 export default function Buscador({ filtrosAbiertos, onToggleFiltros }) {
     const [location] = useLocation()
-    if (location === '/pedidos') return null
+    if (location === '/pedidos' || location === '/perfil') return null
 
     const mostrarFiltros = location === '/exploracion'
 

@@ -1,0 +1,46 @@
+const direcciones = [
+    {
+        id: 1,
+        nombre_direccion: 'Casa',
+        provincia: 'Tierra del Fuego',
+        ciudad: 'Ushuaia',
+        numero: '1367',
+        depto: null,
+        piso: null,
+        referencia: 'Casa con porton azul',
+        usuario_id: 1,
+        calle: 'Int. Miguel Torelli',
+        barrio: 'Centro',
+        seleccionada: false,
+    },
+    {
+        id: 2,
+        nombre_direccion: 'Trabajo',
+        provincia: 'Tierra del Fuego',
+        ciudad: 'Ushuaia',
+        numero: '450',
+        depto: 'A',
+        piso: '2',
+        referencia: 'Edificio de oficinas frente a la plaza',
+        usuario_id: 1,
+        calle: 'San Martin',
+        barrio: 'Microcentro',
+        seleccionada: true,
+    },
+    {
+        id: 3,
+        nombre_direccion: 'Casa de mama',
+        provincia: 'Tierra del Fuego',
+        ciudad: 'Ushuaia',
+        numero: '820',
+        depto: null,
+        piso: null,
+        referencia: 'Porton verde al lado del kiosco',
+        usuario_id: 1,
+        calle: 'Gobernador Paz',
+        barrio: 'Andino',
+        seleccionada: false,
+    }
+]
+
+export default direcciones

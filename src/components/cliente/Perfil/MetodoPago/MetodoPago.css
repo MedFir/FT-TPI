@@ -1,0 +1,68 @@
+.PerfilMetodoPago {
+    position: relative;
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    min-height: 92px;
+    padding: 10px 10px 12px;
+    border: 1px solid #eae2dc;
+    border-radius: 11px;
+    background: #D9D9D9;
+    cursor: pointer;
+}
+
+.PerfilMetodoPagoContenido h3 {
+    margin: 0;
+    font-size: 22px;
+    line-height: 1.05;
+}
+
+.PerfilMetodoPagoContenido p {
+    margin-top: 8px;
+    color: #333;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.05;
+}
+
+.PerfilMetodoPagoTitular {
+    margin-top: 7px;
+    font-size: 17px;
+}
+
+.PerfilMetodoPagoEliminar {
+    width: 30px;
+    height: 30px;
+    flex: 0 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+    border: 0;
+    border-radius: 50%;
+    background: #fff;
+    cursor: pointer;
+}
+
+.PerfilMetodoPagoEliminar img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+}
+
+.PerfilMetodoPagoEliminar:active img {
+    opacity: 0.55;
+}
+
+.PerfilMetodoPagoEliminar:active {
+    transform: scale(1.12);
+}
+
+.PerfilMetodoPagoMarca {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    width: 30px;
+    height: 20px;
+    object-fit: contain;
+}

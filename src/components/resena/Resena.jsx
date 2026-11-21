@@ -23,7 +23,7 @@ export default function Resenas({ resena, alternarModal }) {
     return (
         <div className='Resena'>
             <div className='BodyResena'>
-                <img src={resena.img_perfil ?? "/resenas/usuarioAvatar.png"} alt={`Foto de perfil de ${resena.nombre_cliente}`} />
+                <img src={resena.img_perfil ?? "/clientes/general/usuarioAvatar.png"} alt={`Foto de perfil de ${resena.nombre_cliente}`} />
                 <div className='InformacionResena'>
                     <div className="CabeceraResena">
                         <p style={{ fontWeight: "bold" }}>{resena.nombre_cliente}</p>
