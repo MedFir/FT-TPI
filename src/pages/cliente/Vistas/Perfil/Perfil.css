@@ -79,7 +79,6 @@
     width: 28px;
     height: 28px;
     object-fit: contain;
-    transition: transform 100ms ease;
 }
 
 .PerfilSeccionTitulo button:active img {
@@ -108,4 +107,18 @@
     color: #77706c;
     font-size: 15px;
     text-align: center;
+}
+
+.PerfilFormDireccionBotones{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+.PerfilSeccionForm{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }

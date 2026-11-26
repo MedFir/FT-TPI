@@ -4,10 +4,13 @@ import tarjetas from '../../../../services/tarjetasService.js'
 import direcciones from '../../../../services/direccionesService.js'
 import MetodoPago from '../../../../components/cliente/Perfil/MetodoPago/MetodoPago.jsx'
 import Direccion from '../../../../components/cliente/Perfil/Direccion/Direccion.jsx'
+import FormDireccion from '../../../../components/cliente/Perfil/FormDireccion/FormDireccion.jsx'
+import { useState } from 'react'
 
 export default function Perfil() {
     const direccionSeleccionada = direcciones.find((direccion) => direccion.seleccionada) ?? direcciones[0]
     const otrasDirecciones = direcciones.filter((direccion) => direccion !== direccionSeleccionada)
+    const [formDireccion, setFormDireccion] = useState(false)
 
     return (
         <section className="Perfil" aria-label="Perfil del usuario">
@@ -45,13 +48,53 @@ export default function Perfil() {
             </article>
 
 
+
+
+
+
+
+
+
+
+
+
             {/* Direcciones */}
             <article className="PerfilDirecciones">
-                <header className="PerfilSeccionTitulo PerfilDireccionSeccionTitulo">
-                    <h2>Direccion seleccionada</h2>
-                    <button type="button" aria-label="Agregar direccion">
-                        <img src="/perfil/create.png" alt="" />
-                    </button>
+                <header className="PerfilDireccionSeccionTitulo">
+                    <div className="PerfilSeccionTitulo">
+                        <h2>Direccion seleccionada</h2>
+
+                        {formDireccion ? (
+                            <div className='PerfilFormDireccionBotones'>
+
+                                <button onClick={() => setFormDireccion(!formDireccion)} type="button" aria-label="Agregar direccion">
+                                    <img src="/perfil/cancel.png" alt="cerrar formulario" />
+                                </button>
+
+                                <button
+                                    form="form-nueva-direccion"
+                                    type="submit"
+                                    aria-label="Confirmar direccion"
+                                >
+                                    <img src="/perfil/submit.png" alt="enviar formulario" />
+                                </button>
+
+                            </div>
+                        ):(
+                            <button onClick={() => setFormDireccion(!formDireccion)} type="button" aria-label="Agregar direccion">
+                                <img src="/perfil/create.png" alt="abrir formulario" />
+                            </button>
+                        )}
+                        
+                        
+                    </div>
+                    <div className='PerfilSeccionForm'>
+                        {/* Aqui se ve el formulario de crear direccion */}
+                        {formDireccion && (
+                            <FormDireccion/>
+                        )}
+                    </div>
+                    
                 </header>
                 
                 {direccionSeleccionada ? (
