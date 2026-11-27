@@ -2,10 +2,10 @@ const negocios = [
     {
         id: 1,
         nombre: 'Grido Helados',
-        imagen_url: '',
+        imagen_url: '/negocios/negociosEjemplo.webp',
         numero_contacto: '0800-555-5555',
         biografia: 'Helados y postres para disfrutar en cualquier momento.',
-        horario_apertura: '10:00',
+        horario_apertura: '00:00',
         horario_clausura: '23:00',
         puntuacion_media: 4.9,
         cantidad_valoraciones: 56,
@@ -13,7 +13,7 @@ const negocios = [
     {
         id: 2,
         nombre: 'Burger House',
-        imagen_url: '',
+        imagen_url: '/negocios/negociosEjemplo.webp',
         numero_contacto: '0800-555-5556',
         biografia: 'Hamburguesas caseras preparadas con ingredientes frescos.',
         horario_apertura: '11:00',
@@ -24,7 +24,7 @@ const negocios = [
     {
         id: 3,
         nombre: 'Pizzería Central',
-        imagen_url: '',
+        imagen_url: '/negocios/negociosEjemplo.webp',
         numero_contacto: '0800-555-5557',
         biografia: 'Pizzas artesanales para compartir con amigos y familia.',
         horario_apertura: '12:00',
@@ -35,7 +35,7 @@ const negocios = [
     {
         id: 4,
         nombre: 'Empanadas de Casa',
-        imagen_url: '',
+        imagen_url: '/negocios/negociosEjemplo.webp',
         numero_contacto: '0800-555-5558',
         biografia: 'Empanadas caseras con sabores tradicionales.',
         horario_apertura: '11:00',
@@ -44,6 +44,11 @@ const negocios = [
         cantidad_valoraciones: 29,
     },
 ]
+
+export function getNegocioById(id) {
+  const resultado = negocios.filter((negocio) => negocio.id === Number(id));
+  return resultado[0] || null;
+}
 
 export function negocioEstaAbierto(negocio, minutosActuales) {
     const [horaApertura, minutosApertura] = negocio.horario_apertura.split(':').map(Number)
@@ -59,3 +64,4 @@ export function negocioEstaAbierto(negocio, minutosActuales) {
 }
 
 export default negocios
+

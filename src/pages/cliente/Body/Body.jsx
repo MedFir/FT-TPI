@@ -37,7 +37,7 @@ export default function Body() {
                 <Route path="/pedidos" component={HistorialPedidos} />
                 <Route path="/perfil" component={Perfil} />
                 <Route path="/producto" component={Producto} />
-                <Route path="/negocio" component={Negocio} />
+                <Route path="/negocio/:id" component={Negocio} />
                 <Route>{() => <NotFound />}</Route>
             </Switch>
             <Navbar />

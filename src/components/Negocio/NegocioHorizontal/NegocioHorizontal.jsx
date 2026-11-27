@@ -3,6 +3,7 @@ import { negocioEstaAbierto } from '../../../services/negociosService.js'
 import './NegocioHorizontal.css'
 
 export default function NegocioHorizontal({ negocio }) {
+
     
     const ahora = new Date()
     const abierto = negocioEstaAbierto(negocio, ahora.getHours() * 60 + ahora.getMinutes())
@@ -33,7 +34,7 @@ export default function NegocioHorizontal({ negocio }) {
                     {abierto ? `Abierto hasta las ${horaEstado}` : `Cerrado; abre a las ${horaEstado}`}
                 </p>
             </div>
-            <Link className="cliente-negocio-horizontal-ver" href="/negocio">
+            <Link className="cliente-negocio-horizontal-ver" href={`/negocio/${negocio.id}`}>
                 Ver negocio
             </Link>
         </article>

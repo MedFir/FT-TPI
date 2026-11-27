@@ -1,3 +1,171 @@
-h1 {
-    font-size: 2rem;
+.negocioCliente {
+    font-size: 16px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-bottom: 140px;
+}
+.negocioCliente h2 , .negocioCliente h3 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.negocioCliente .negocioNoEncontrado{
+    width: 100%;
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    height: 200px;
+    border-radius: 30px;
+
+}
+.negocioCliente .negocioNoEncontrado p {
+    font-size: 20px;
+    font-weight: bold;
+    color: #F52B3A;
+}
+.negocioCliente .ProductosDestacados{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+
+
+
+.negocioCliente .negocioCabezera{
+    width: 100%;
+    height: 90px;
+    background-color: white;
+    border-radius: 20px;
+    margin-top: 15px;
+    padding: 10px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+.negocioCabezera .negocioNombre{
+    font-size: 25px;
+    margin-right: 20px;
+}
+.negocioCabezera .negocioImagen{
+    width: 72px;
+    height: 72px;
+    background-color: white;
+    border-radius: 50%;
+    border: #EAE2DC 2px solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.negocioCabezera .negocioImagen img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+.negocioCabezera .negocioEstadoDeApertura{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.negocioEstadoDeApertura .circuloVerde{
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #25A55B;
+    margin-right: 5px;
+}
+.negocioEstadoDeApertura .circuloRojo{
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #F52B3A;
+    margin-right: 5px;
+}
+.negocioEstadoDeApertura .negocioEstadoTextoAbierto{
+    color: #25A55B;
+}
+.negocioEstadoDeApertura .negocioEstadoTextoCerrado{
+    color: #F52B3A;
+}
+
+
+
+
+.negocioCliente .negocioCuerpo{
+    width: 100%;
+    min-height: 60px;
+    background-color: white;
+    border-radius: 20px;
+    margin-top: 15px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
+
+.negocioCliente .negocioHorarios{
+    width: 100%;
+    min-height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.negocioHorarios .negocioHorarios-Titulo{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    margin-top: 15px;
+}
+.negocioHorarios .negocioHorarios-tabla{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 15px;
+    font-size: 10px;
+}
+.negocioHorarios-celdaTitulo{
+    width: 100%;
+    height: 35px;
+    background-color: white;
+    padding: 6px;
+    border-radius: 9px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.negocioHorarios-celdaHoras{
+    width: 100%;
+    height: 60px;
+    margin-top: 5px;
+    background-color: white;
+    padding: 6px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.negocioCeldaCerrado{
+    background-color: #FEE2E2;
+    border: #FECACA solid 1px;
+}
+.negocioCeldaCerrado p{
+    color: #991B1B;
+    font-weight: 500;
 }

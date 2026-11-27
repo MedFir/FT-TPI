@@ -1,6 +1,8 @@
 import "./NegocioRectangular.css"
+import { useLocation } from "wouter";
 
 export default function NegocioRectangular({ negocio }) {
+    const [, setLocation] = useLocation();
     return (
         <div className="NegocioRectangular">
             <div className="NegocioRectangularCabecera">
@@ -11,7 +13,7 @@ export default function NegocioRectangular({ negocio }) {
                 </div>
             </div>
             <div className="NegocioRectangularPie">
-                <button>Ver</button>
+                <button onClick={() => setLocation(`/negocio/${negocio.id}`)} >Ver</button>
             </div>
         </div>
     )
